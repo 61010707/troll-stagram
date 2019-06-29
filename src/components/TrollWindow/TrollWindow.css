@@ -2,7 +2,7 @@
   position: absolute;
   top: 0%;
   width: 800px;
-  height: 300%;
+  height: 100%;
 }
 .bodytTroll {
   justify-content: center;
@@ -11,7 +11,9 @@
   align-items: center;
   display: flex;
 }
-.mainContain{
-  padding-Left: "120px";
-  padding-right: "120px";
+.coppy{
+  position:absolute;
+  top:720px;
+  left:318px;
+   font-size:13px;
 }
