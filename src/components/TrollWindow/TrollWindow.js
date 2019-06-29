@@ -11,6 +11,7 @@ import {
 import "./TrollWindow.css";
 import TrollHeader from "../TrollHeader/TrollHeader.js";
 import TrollView from "../TrollView/TrollView.js";
+import TrollFooter from "../TrollFooter/TrollFooter.js";
 const TrollWindow = () => {
   return (
     <div className="bodytTroll">
@@ -19,9 +20,17 @@ const TrollWindow = () => {
           <WindowHeader>
             <TrollHeader />
           </WindowHeader>
-          <div style={{ padding: "20px" }}>
-            <WindowContent>
+          <div
+            className="mainContain"
+            style={{
+              paddingLeft: "120px",
+              paddingRight: "120px"
+            }}
+          >
+            <WindowContent style={{ borderWidth: "2px", borderStyle: "solid" }}>
               <TrollView />
+              <div style={{ height: "430px" }} />
+              <TrollFooter />
             </WindowContent>
           </div>
         </Window>
