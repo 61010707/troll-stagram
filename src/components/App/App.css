@@ -1,0 +1,8 @@
+body {
+  background-color: teal;
+}
+.appBars {
+  position: absolute;
+  top: 94%;
+  bottom: 0px;
+}
