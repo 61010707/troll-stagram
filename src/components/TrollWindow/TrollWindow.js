@@ -1,13 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import {
-  Window,
-  themes,
-  reset,
-  Toolbar,
-  WindowContent,
-  WindowHeader
-} from "react95";
+import { Window, themes, WindowContent, WindowHeader } from "react95";
 import "./TrollWindow.css";
 import TrollHeader from "../TrollHeader/TrollHeader.js";
 import TrollView from "../TrollView/TrollView.js";
