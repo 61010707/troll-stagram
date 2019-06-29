@@ -31,7 +31,7 @@ const TrollWindow = () => {
             <WindowContent style={{ borderWidth: "2px", borderStyle: "solid" }}>
               <TrollProfile/>
               <TrollView />
-              <div style={{ height: "430px" }} />
+              
               <TrollFooter />
             </WindowContent>
           </div>
