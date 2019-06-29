@@ -16,64 +16,77 @@ const TrollFooter = () => {
     let formData = new FormData();
     formData.append("imageFile", file);
     Axios({
-      url: "http://6a1812cf.ngrok.io/user/image",
+      url: "http://02a7dd8e.ngrok.io/user/image",
       method: "POST",
 
       data: formData
-    }).then(
-      res => {
-        console.log(res);
-      },
-      err => {
-        console.log(err);
-      }
-    );
+    })
+      .then(window.location.reload())
+      .then(
+        res => {
+          console.log(res);
+          document.getElementById("submit-form").click();
+        },
+        err => {
+          console.log(err);
+          document.getElementById("submit-form").click();
+        }
+      );
   };
   return (
     <div>
-      <Toolbar style={{ justifyContent: "space-between" }}>
-        <div class="ones">
-          <Button className="footerButton">
-            {" "}
-            <FontAwesomeIcon icon={faHome} />
-          </Button>
-        </div>
-        <div class="twos">
-          <Button className="footerButton">
-            {"  "}
-            <FontAwesomeIcon icon={faSearch} />
-          </Button>
+      <form>
+        {" "}
+        <Toolbar style={{ justifyContent: "space-between" }}>
+          <div class="ones">
+            <Button className="footerButton">
+              {" "}
+              <FontAwesomeIcon icon={faHome} />
+            </Button>
+          </div>
+          <div class="twos">
+            <Button className="footerButton">
+              {"  "}
+              <FontAwesomeIcon icon={faSearch} />
+            </Button>
 
-          <Button
-            className="footerButton"
-            type="file"
-            name="file"
-            onClick={() => {
-              document.getElementById("file-input").click();
-            }}
-          >
-            <FontAwesomeIcon icon={faCamera} />
-          </Button>
-          <input
-            id="file-input"
-            type="file"
-            name="file"
-            style={{ display: "none" }}
-            onChange={handleChange}
-          />
+            <Button
+              className="footerButton"
+              type="file"
+              name="file"
+              onClick={() => {
+                document.getElementById("file-input").click();
+              }}
+            >
+              <FontAwesomeIcon icon={faCamera} />
+            </Button>
+            <input
+              id="file-input"
+              type="file"
+              name="file"
+              style={{ display: "none" }}
+              onChange={handleChange}
+            />
 
-          <Button className="footerButton">
-            {"  "}
-            <FontAwesomeIcon icon={faHeart} />
-          </Button>
-        </div>
-        <div class="fives">
-          <Button className="footerButton">
-            {"  "}
-            <FontAwesomeIcon icon={faUserAlt} />
-          </Button>
-        </div>
-      </Toolbar>
+            <Button className="footerButton">
+              {"  "}
+              <FontAwesomeIcon icon={faHeart} />
+            </Button>
+          </div>
+          <div class="fives">
+            <Button className="footerButton">
+              {"  "}
+              <FontAwesomeIcon icon={faUserAlt} />
+            </Button>
+          </div>
+        </Toolbar>
+        <button
+          type="submit"
+          id="submit-form"
+          style={{ display: "none" }}
+          onClick={console.log("submit")}
+        />
+      </form>
     </div>
   );
 };
