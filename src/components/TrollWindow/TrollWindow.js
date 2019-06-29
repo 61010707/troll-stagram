@@ -13,11 +13,16 @@ import TrollHeader from "../TrollHeader/TrollHeader.js";
 import TrollView from "../TrollView/TrollView.js";
 import TrollFooter from "../TrollFooter/TrollFooter.js";
 import TrollProfile from "../TrollProfile/TrollProfile";
+import { black } from "ansi-colors";
 const TrollWindow = () => {
   return (
     <div className="bodytTroll">
       <ThemeProvider theme={themes.default}>
-        <Window className="mainWindow">
+        <Window className="mainWindow"  style={{
+              paddingLeft: "120px",
+              paddingRight: "120px"
+            }}>
+        
           <WindowHeader>
             <TrollHeader />
           </WindowHeader>
