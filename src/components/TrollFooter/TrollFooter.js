@@ -9,7 +9,7 @@ import {
   faHeart,
   faUserAlt
 } from "@fortawesome/free-solid-svg-icons";
-
+import "../TrollFooter/TrollFooter.css";
 const TrollFooter = () => {
   const handleChange = e => {
     let files = e.target.files;
@@ -26,14 +26,18 @@ const TrollFooter = () => {
   return (
     <div>
       <Toolbar style={{ justifyContent: "space-between" }}>
+        <div class="ones">
         <Button className="footerButton">
           {" "}
           <FontAwesomeIcon icon={faHome} />
         </Button>
+        </div>
+        <div class="twos">
         <Button className="footerButton">
           {"  "}
           <FontAwesomeIcon icon={faSearch} />
         </Button>
+
         <Button
           className="footerButton"
           type="file"
@@ -51,14 +55,18 @@ const TrollFooter = () => {
           style={{ display: "none" }}
           onChange={handleChange}
         />
+
         <Button className="footerButton">
           {"  "}
           <FontAwesomeIcon icon={faHeart} />
         </Button>
+        </div>
+        <div class="fives">
         <Button className="footerButton">
           {"  "}
           <FontAwesomeIcon icon={faUserAlt} />
         </Button>
+        </div>
       </Toolbar>
     </div>
   );
