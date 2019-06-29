@@ -10,6 +10,7 @@ import {
 } from "react95";
 import "./TrollWindow.css";
 import TrollHeader from "../TrollHeader/TrollHeader.js";
+import TrollView from "../TrollView/TrollView.js";
 const TrollWindow = () => {
   return (
     <div className="bodytTroll">
@@ -18,6 +19,11 @@ const TrollWindow = () => {
           <WindowHeader>
             <TrollHeader />
           </WindowHeader>
+          <div style={{ padding: "20px" }}>
+            <WindowContent>
+              <TrollView />
+            </WindowContent>
+          </div>
         </Window>
       </ThemeProvider>
     </div>
