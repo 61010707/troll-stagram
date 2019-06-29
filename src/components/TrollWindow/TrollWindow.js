@@ -21,13 +21,7 @@ const TrollWindow = () => {
           <WindowHeader>
             <TrollHeader />
           </WindowHeader>
-          <div
-            className="mainContain"
-            style={{
-              paddingLeft: "120px",
-              paddingRight: "120px"
-            }}
-          >
+          <div className="mainContain">
             <WindowContent style={{ borderWidth: "2px", borderStyle: "solid" }}>
               <TrollProfile />
               <TrollView />
