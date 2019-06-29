@@ -1,5 +1,5 @@
 import React from "react";
-import Axios, { post } from "axios";
+import Axios from "axios";
 import { Toolbar, Button } from "react95";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,60 +12,66 @@ import {
 import "../TrollFooter/TrollFooter.css";
 const TrollFooter = () => {
   const handleChange = e => {
-    let files = e.target.files;
-    console.log(files);
-    let reader = new FileReader();
-    reader.readAsDataURL(files[0]);
-    reader.onload = e => {
-      console.log("img data", e.target.result);
-      const url = "http://1779896c.ngrok.io/user/image";
-      const formData = { imageFile: e.target.result };
-      return Axios.post(url, formData);
-    };
+    let file = e.target.files[0];
+    let formData = new FormData();
+    formData.append("imageFile", file);
+    Axios({
+      url: "http://6a1812cf.ngrok.io/user/image",
+      method: "POST",
+
+      data: formData
+    }).then(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log(err);
+      }
+    );
   };
   return (
     <div>
       <Toolbar style={{ justifyContent: "space-between" }}>
         <div class="ones">
-        <Button className="footerButton">
-          {" "}
-          <FontAwesomeIcon icon={faHome} />
-        </Button>
+          <Button className="footerButton">
+            {" "}
+            <FontAwesomeIcon icon={faHome} />
+          </Button>
         </div>
         <div class="twos">
-        <Button className="footerButton">
-          {"  "}
-          <FontAwesomeIcon icon={faSearch} />
-        </Button>
+          <Button className="footerButton">
+            {"  "}
+            <FontAwesomeIcon icon={faSearch} />
+          </Button>
 
-        <Button
-          className="footerButton"
-          type="file"
-          name="file"
-          onClick={() => {
-            document.getElementById("file-input").click();
-          }}
-        >
-          <FontAwesomeIcon icon={faCamera} />
-        </Button>
-        <input
-          id="file-input"
-          type="file"
-          name="file"
-          style={{ display: "none" }}
-          onChange={handleChange}
-        />
+          <Button
+            className="footerButton"
+            type="file"
+            name="file"
+            onClick={() => {
+              document.getElementById("file-input").click();
+            }}
+          >
+            <FontAwesomeIcon icon={faCamera} />
+          </Button>
+          <input
+            id="file-input"
+            type="file"
+            name="file"
+            style={{ display: "none" }}
+            onChange={handleChange}
+          />
 
-        <Button className="footerButton">
-          {"  "}
-          <FontAwesomeIcon icon={faHeart} />
-        </Button>
+          <Button className="footerButton">
+            {"  "}
+            <FontAwesomeIcon icon={faHeart} />
+          </Button>
         </div>
         <div class="fives">
-        <Button className="footerButton">
-          {"  "}
-          <FontAwesomeIcon icon={faUserAlt} />
-        </Button>
+          <Button className="footerButton">
+            {"  "}
+            <FontAwesomeIcon icon={faUserAlt} />
+          </Button>
         </div>
       </Toolbar>
     </div>
