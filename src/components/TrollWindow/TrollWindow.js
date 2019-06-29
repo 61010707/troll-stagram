@@ -12,6 +12,7 @@ import "./TrollWindow.css";
 import TrollHeader from "../TrollHeader/TrollHeader.js";
 import TrollView from "../TrollView/TrollView.js";
 import TrollFooter from "../TrollFooter/TrollFooter.js";
+import TrollProfile from "../TrollProfile/TrollProfile"
 const TrollWindow = () => {
   return (
     <div className="bodytTroll">
@@ -28,6 +29,7 @@ const TrollWindow = () => {
             }}
           >
             <WindowContent style={{ borderWidth: "2px", borderStyle: "solid" }}>
+              <TrollProfile/>
               <TrollView />
               <div style={{ height: "430px" }} />
               <TrollFooter />
