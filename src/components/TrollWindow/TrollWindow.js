@@ -11,15 +11,24 @@ const TrollWindow = () => {
   return (
     <div className="bodytTroll">
       <ThemeProvider theme={themes.default}>
-        <Window className="mainWindow" style={{
-              paddingLeft: "135px",
-              paddingRight: "135px"
-            }}>
+        <Window
+          className="mainWindow"
+          style={{
+            paddingLeft: "135px",
+            paddingRight: "135px"
+          }}
+        >
           <WindowHeader>
             <TrollHeader />
           </WindowHeader>
           <div className="mainContain">
-            <WindowContent style={{ borderWidth: "2px", borderStyle: "solid", height:"680px"}}>
+            <WindowContent
+              style={{
+                borderWidth: "2px",
+                borderStyle: "solid",
+                height: "680px"
+              }}
+            >
               <TrollProfile />
               <TrollView />
 

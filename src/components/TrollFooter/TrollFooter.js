@@ -16,7 +16,7 @@ const TrollFooter = () => {
     let formData = new FormData();
     formData.append("imageFile", file);
     Axios({
-      url: "http://b4891365.ngrok.io/user/image",
+      url: "http://218c4cfb.ngrok.io/user/image",
       method: "POST",
       data: formData
     }).then(

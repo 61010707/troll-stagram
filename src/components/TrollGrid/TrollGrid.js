@@ -47,7 +47,7 @@ export default function TrollGrid() {
   const [count, setCount] = React.useState(0);
   React.useEffect(() => {
     setInterval(() => {
-      Axios.get("http://b4891365.ngrok.io/user/posts").then(res => {
+      Axios.get("http://218c4cfb.ngrok.io/user/posts").then(res => {
         console.log(res.data);
         setCount(res.data);
         fetch();
@@ -61,7 +61,7 @@ export default function TrollGrid() {
         {array.map(imgC => {
           return (
             <GridListTile key={imgC}>
-              <img src={`http://b4891365.ngrok.io/user/image/${imgC}`} alt="" />
+              <img src={`http://218c4cfb.ngrok.io/user/image/${imgC}`} alt="" />
             </GridListTile>
           );
         })}
