@@ -43,15 +43,15 @@ export default function TrollGrid() {
       array.push(i);
     }
     console.log(array);
-    console.log(count);
   };
   const [count, setCount] = React.useState(0);
-  const [loading, setLoading] = React.useState(false);
   React.useEffect(() => {
-    Axios.get("http://b4891365.ngrok.io/user/posts").then(res => {
-      console.log(res.data);
-      setCount(res.data);
-    });
+    setTimeout(() => {
+      Axios.get("http://b4891365.ngrok.io/user/posts").then(res => {
+        console.log(res.data);
+        setCount(res.data);
+      });
+    }, 300);
   }, []);
   fetch();
   return (
