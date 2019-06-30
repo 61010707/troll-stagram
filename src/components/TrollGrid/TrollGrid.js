@@ -53,7 +53,7 @@ export default function TrollGrid() {
         fetch();
       });
     }, 1000);
-  }, []);
+  });
   fetch();
   return (
     <div className={classes.root}>
