@@ -11,17 +11,18 @@ const TrollWindow = () => {
   return (
     <div className="bodytTroll">
       <ThemeProvider theme={themes.default}>
+        
         <Window
           className="mainWindow"
-          style={{
-            paddingLeft: "135px",
-            paddingRight: "135px"
-          }}
+         
         >
           <WindowHeader>
             <TrollHeader />
           </WindowHeader>
-          <div className="mainContain">
+          <div className="mainContain"  style={{
+            paddingLeft: "135px",
+            paddingRight: "135px"
+          }}>
             <WindowContent
               style={{
                 borderWidth: "2px",
@@ -32,9 +33,9 @@ const TrollWindow = () => {
               <TrollProfile />
               <TrollView />
 
-              <div style={{ backgroundColor: "teal", height: "295px" }}>
+              
                 <TrollGrid />
-              </div>
+              
               <TrollFooter />
               <h1 class="coppy">Copyright @ Time Fai Zil</h1>
             </WindowContent>

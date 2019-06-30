@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
   },
   gridList: {
     width: 500,
-    height: 400
+    height: 340
   },
   "@global": {
     "*::-webkit-scrollbar": {
