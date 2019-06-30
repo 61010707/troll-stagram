@@ -81,9 +81,7 @@ export default function TrollGrid() {
   React.useEffect(() => {
     setInterval(() => {
       Axios.get("http://218c4cfb.ngrok.io/user/posts").then(res => {
-        console.log(res.data);
         setCount(res.data);
-        fetch();
       });
     }, 1000);
   });
@@ -99,8 +97,9 @@ export default function TrollGrid() {
                 <CardActionArea key={imgC} onClick={handleClickOpen}>
                   <img
                     className={classes.media}
-                    src={`http://218c4cfb.ngrok.io/user/image/${imgC}`}
+                    src={`http://218c4cfb.ngrok.io/user/image/${imgC}?key=${Date.now()}`}
                     alt=""
+                    style={{ width: "100%", height: "100%" }}
                   />
                 </CardActionArea>
               </Card>

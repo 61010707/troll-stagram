@@ -13,6 +13,8 @@ import "../TrollFooter/TrollFooter.css";
 const TrollFooter = () => {
   const handleChange = e => {
     let file = e.target.files[0];
+    console.log(123456,e.target.files);
+    
     let formData = new FormData();
     formData.append("imageFile", file);
     Axios({
