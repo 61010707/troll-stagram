@@ -1,0 +1,17 @@
+.oneh Button,.twoh Button,.threeh Button{
+    top:4px;
+    width:30px;
+    height: 30px;
+}
+.oneh Button{
+   position: absolute;
+   left: 759px;
+}
+.twoh Button{
+    position: absolute;
+    left: 725px;
+ }
+ .threeh Button{
+    position: absolute;
+    left: 690px;
+ }

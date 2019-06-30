@@ -1,9 +1,15 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import GridList from "@material-ui/core/GridList";
-import GridListTile from "@material-ui/core/GridListTile";
-import tileData from "./titleData";
-
+import Axios from "axios";
+import {
+  makeStyles,
+  GridList,
+  GridListTile,
+  Card,
+  CardActionArea,
+  Dialog,
+  DialogContent
+} from "@material-ui/core";
+import { Window, WindowHeader, Button } from "react95";
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
@@ -14,7 +20,19 @@ const useStyles = makeStyles(theme => ({
   },
   gridList: {
     width: 500,
-    height: 300
+    height: 340
+  },
+  card: {
+    display: "flex",
+    maxWidth: 345,
+    justifyContent: "center",
+    justifyItems: "center",
+    backgroundColor: "lightgray"
+  },
+  media: {
+    height: 220,
+    justifyContent: "space-around"
+    // 16:9
   },
   "@global": {
     "*::-webkit-scrollbar": {
@@ -37,16 +55,94 @@ const useStyles = makeStyles(theme => ({
 
 export default function TrollGrid() {
   const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+  const [count, setCount] = React.useState(0);
+  const [order, setOrder] = React.useState();
+  let array = [];
 
+  const fetch = () => {
+    for (let i = count; i > 0; i--) {
+      array.push(i);
+    }
+    console.log(array);
+  };
+
+  function handleClickOpen(event) {
+    setOpen(true);
+    setOrder(event.target.src);
+    console.log("frame", open);
+    console.log("ImgC", order);
+  }
+
+  function handleClose() {
+    setOpen(false);
+  }
+
+  React.useEffect(() => {
+    setInterval(() => {
+      Axios.get("http://218c4cfb.ngrok.io/user/posts").then(res => {
+        setCount(res.data);
+      });
+    }, 1000);
+  });
+
+  fetch();
   return (
     <div className={classes.root}>
       <GridList cellHeight={160} className={classes.gridList} cols={3}>
-        {tileData.map(tile => (
-          <GridListTile key={tile.img}>
-            <img src={tile.img} alt={"img"} />
-          </GridListTile>
-        ))}
+        {array.map(imgC => {
+          return (
+            <GridListTile key={imgC}>
+              <Card className={classes.card} key={imgC}>
+                <CardActionArea key={imgC} onClick={handleClickOpen}>
+                  <img
+                    className={classes.media}
+                    src={`http://218c4cfb.ngrok.io/user/image/${imgC}?key=${Date.now()}`}
+                    alt=""
+                    style={{ width: "100%", height: "100%" }}
+                  />
+                </CardActionArea>
+              </Card>
+            </GridListTile>
+          );
+        })}
       </GridList>
+
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <Window>
+          <WindowHeader
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between"
+            }}
+          >
+            Image View
+            <Button
+              style={{ marginRight: "-6px", marginTop: "1px" }}
+              size={"sm"}
+              onClick={() => {
+                setOpen(false);
+              }}
+              square
+            >
+              <span
+                style={{ fontWeight: "bold", transform: "translateY(-1px)" }}
+              >
+                x
+              </span>
+            </Button>
+          </WindowHeader>
+          <DialogContent>
+            <img src={order} alt="" />
+          </DialogContent>
+        </Window>
+      </Dialog>
     </div>
   );
 }

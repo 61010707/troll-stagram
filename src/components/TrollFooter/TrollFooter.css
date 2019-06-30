@@ -1,6 +1,7 @@
 
 .ones Button,.twos Button,.threes Button,.fours Button ,.fives Button{
-    left: -3px;;
-    width:103px;
+    left: -3px;
+    top:5px;
+    width:95px;
     height: 45px;
 }

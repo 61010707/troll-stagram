@@ -4,12 +4,10 @@ body {
   padding:0px;
   height:100%;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; 
   
 }
 html{
-  font-family: 'Roboto',sans-serif;
+  font-family: 'Roboto Mono, monospaced';
+ 
 }
-
-code {
-  }

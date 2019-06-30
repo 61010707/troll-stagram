@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "react95";
 import "../TrollProfile/TrollProfile.css";
+
 const TrollProfile = () => {
   return (
     <div class="CONDIS">
@@ -25,7 +26,7 @@ const TrollProfile = () => {
       </div>
       <div class="textFollowing">
         <h1 class="b">3</h1> <br />
-        <h1>Following</h1>
+        <h1 >Following</h1>
       </div>
 
       <div class="buttonfow">
