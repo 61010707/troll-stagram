@@ -16,9 +16,8 @@ const TrollFooter = () => {
     let formData = new FormData();
     formData.append("imageFile", file);
     Axios({
-      url: "http://6a1812cf.ngrok.io/user/image",
+      url: "http://b4891365.ngrok.io/user/image",
       method: "POST",
-
       data: formData
     }).then(
       res => {
@@ -31,6 +30,7 @@ const TrollFooter = () => {
   };
   return (
     <div>
+      {" "}
       <Toolbar style={{ justifyContent: "space-between" }}>
         <div class="ones">
           <Button className="footerButton">

@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
-import tileData from "./titleData";
+import Axios from "axios";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -37,15 +37,34 @@ const useStyles = makeStyles(theme => ({
 
 export default function TrollGrid() {
   const classes = useStyles();
-
+  let array = [];
+  const fetch = () => {
+    for (let i = count; i > 0; i--) {
+      array.push(i);
+    }
+    console.log(array);
+  };
+  const [count, setCount] = React.useState(0);
+  React.useEffect(() => {
+    setInterval(() => {
+      Axios.get("http://b4891365.ngrok.io/user/posts").then(res => {
+        console.log(res.data);
+        setCount(res.data);
+        fetch();
+      });
+    }, 1000);
+  });
+  fetch();
   return (
     <div className={classes.root}>
       <GridList cellHeight={160} className={classes.gridList} cols={3}>
-        {tileData.map(tile => (
-          <GridListTile key={tile.img}>
-            <img src={tile.img} alt={"img"} />
-          </GridListTile>
-        ))}
+        {array.map(imgC => {
+          return (
+            <GridListTile key={imgC}>
+              <img src={`http://b4891365.ngrok.io/user/image/${imgC}`} alt="" />
+            </GridListTile>
+          );
+        })}
       </GridList>
     </div>
   );
