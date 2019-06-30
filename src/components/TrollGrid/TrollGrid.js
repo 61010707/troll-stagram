@@ -39,7 +39,7 @@ export default function TrollGrid() {
   const classes = useStyles();
   let array = [];
   const fetch = () => {
-    for (let i = 1; i < (count > 1 ? count : 10); i++) {
+    for (let i = count; i > 0; i--) {
       array.push(i);
     }
     console.log(array);
@@ -48,10 +48,9 @@ export default function TrollGrid() {
   const [count, setCount] = React.useState(0);
   const [loading, setLoading] = React.useState(false);
   React.useEffect(() => {
-    Axios.get("http://02a7dd8e.ngrok.io/user/posts").then(res => {
+    Axios.get("http://b4891365.ngrok.io/user/posts").then(res => {
       console.log(res.data);
       setCount(res.data);
-      setLoading(res.data !== 0 ? true : false);
     });
   }, []);
   fetch();
@@ -61,7 +60,7 @@ export default function TrollGrid() {
         {array.map(imgC => {
           return (
             <GridListTile key={imgC}>
-              <img src={`http://02a7dd8e.ngrok.io/user/image/${imgC}`} alt="" />
+              <img src={`http://b4891365.ngrok.io/user/image/${imgC}`} alt="" />
             </GridListTile>
           );
         })}
