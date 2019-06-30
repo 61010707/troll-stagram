@@ -42,7 +42,6 @@ export default function TrollGrid() {
     for (let i = count; i > 0; i--) {
       array.push(i);
     }
-    console.log(array);
   };
   const [count, setCount] = React.useState(0);
   React.useEffect(() => {

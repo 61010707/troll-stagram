@@ -36,7 +36,7 @@ const TrollWindow = () => {
                 <TrollGrid />
               </div>
               <TrollFooter />
-              <h1 class="coppy">Copyright @ Time Fai Zil</h1>
+              <h1 className="coppy">Copyright @ Time Fai Zil</h1>
             </WindowContent>
           </div>
         </Window>

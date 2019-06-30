@@ -1,6 +1,6 @@
 import React from "react";
 import "./TrollHeader.css";
-import {  Button } from "react95";
+import { Button } from "react95";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faWindowMinimize,
@@ -9,29 +9,28 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 const TrollHeader = () => {
   return (
-    <div class="headSpan">
-      <span>Pra use</span> 
+    <div className="headSpan">
+      <span>Pra use</span>
 
-      <div class="oneh">
+      <div className="oneh">
         <Button className="footerToolbar">
           {" "}
           <FontAwesomeIcon icon={faWindowMinimize} />
         </Button>
       </div>
-      <div class="twoh">
+      <div className="twoh">
         <Button className="footerToolbar">
           {" "}
           <FontAwesomeIcon icon={faWindowMaximize} />
         </Button>
       </div>
-      <div class="threeh">
+      <div className="threeh">
         <Button className="footerToolbar">
           {" "}
           <FontAwesomeIcon icon={faTimes} />
         </Button>
       </div>
-      </div>
-   
+    </div>
   );
 };
 

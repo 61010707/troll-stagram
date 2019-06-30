@@ -32,13 +32,13 @@ const TrollFooter = () => {
     <div>
       {" "}
       <Toolbar style={{ justifyContent: "space-between" }}>
-        <div class="ones">
+        <div className="ones">
           <Button className="footerButton">
             {" "}
             <FontAwesomeIcon icon={faHome} />
           </Button>
         </div>
-        <div class="twos">
+        <div className="twos">
           <Button className="footerButton">
             {"  "}
             <FontAwesomeIcon icon={faSearch} />
@@ -67,7 +67,7 @@ const TrollFooter = () => {
             <FontAwesomeIcon icon={faHeart} />
           </Button>
         </div>
-        <div class="fives">
+        <div className="fives">
           <Button className="footerButton">
             {"  "}
             <FontAwesomeIcon icon={faUserAlt} />
